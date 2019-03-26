@@ -37,5 +37,11 @@ public class FormationService {
     public Formation valideUpdate(Formation formation) {
         return this.iFormationDao.save(formation);
     }
-}
+
+    public List<Formation> find(String keyword) {
+        return this.iFormationDao.findByThemeContaining(keyword);
+    }
+
+    }
+
 

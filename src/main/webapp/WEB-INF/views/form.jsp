@@ -12,19 +12,27 @@
     <title>Form</title>
 </head>
 <body>
-    <h1>Formulaire</h1>
-    <form method="post" class="form">
-        <div class="form-row">
-            <div class="col">
-        <input type="text" placeholder="numero" name="numero" class="form-control" value="${empty updateForm ? '' : updateForm.numero}">
-            </div>
-            <div class="col">
-        <input type ="text" placeholder ="theme" name="theme" class="form-control" value="${empty updateForm ? '' : updateForm.theme}">
-            </div>
-            <div class="col">
-        <input type="submit" class="btn btn-primary">
-            </div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <h1>Formulaire</h1>
+            <a href="index.html"><h3>Accueil</h3></a>
+            <a href="search.html"><h3>Recherche</h3></a>
+            <form method="post" class="form">
+                <div class="form-row">
+                    <div class="col">
+                        <input type="text" placeholder="numero" name="numero" class="form-control" value="${empty updateForm ? '' : updateForm.numero}">
+                    </div>
+                    <div class="col">
+                        <input type ="text" placeholder ="theme" name="theme" class="form-control" value="${empty updateForm ? '' : updateForm.theme}">
+                    </div>
+                    <div class="col">
+                        <input type="submit" class="btn btn-primary">
+                    </div>
+                </div>
+            </form>
         </div>
-    </form>
+    </div>
+</div>
 </body>
 </html>

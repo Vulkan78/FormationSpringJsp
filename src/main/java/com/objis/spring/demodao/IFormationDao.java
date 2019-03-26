@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface IFormationDao extends JpaRepository<Formation, Integer> {
 
-    List<Formation> findByTheme(String theme);
+    List<Formation> findByThemeContaining(String keyword);
 
 }

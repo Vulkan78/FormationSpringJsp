@@ -69,4 +69,21 @@ public class AppController {
         return "redirect:/index.html";
     }
 
+    @RequestMapping({"/search"})
+    public ModelAndView search (){
+        ModelAndView MAV = new ModelAndView();
+        MAV.setViewName("search");
+        return MAV;
+    }
+
+    @PostMapping("/search")
+    public ModelAndView validateSearch(@RequestParam String keyword) {
+        final ModelAndView mav = new ModelAndView("search");
+        mav.addObject("formationList",
+                this.formationService.find(keyword));
+        return mav;
+
+
+    }
+
 }

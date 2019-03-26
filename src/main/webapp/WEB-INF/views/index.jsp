@@ -15,11 +15,12 @@
     <title>Lourd</title>
 </head>
 <body>
-    <h1>TEST</h1>
-    <a href="form.html"><h3>Formulaire</h3></a>
     <div class="container">
         <div class="row">
             <div class="col-sm">
+                <h1>Bienvenu</h1>
+                <a href="form.html"><h3>Nouveau</h3></a>
+                <a href="search.html"><h3>Recherche</h3></a>
                 <ul class="list-group">
                 <c:forEach items="${formationList}" var="form">
                     <li class="list-group-item">
