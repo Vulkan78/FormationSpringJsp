@@ -5,8 +5,13 @@ import com.objis.spring.demodomaine.Formation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -39,9 +44,13 @@ public class FormationService {
     }
 
     public List<Formation> find(String keyword) {
-        return this.iFormationDao.findByThemeContaining(keyword);
+        List<Formation> results = new ArrayList<Formation>();
+        String[] keywords = keyword.split("[ -]");
+        for(String word: keywords) {
+            results.addAll(this.iFormationDao.findByThemeContaining(word));
+        }
+        return results;
     }
-
-    }
+}
 
 

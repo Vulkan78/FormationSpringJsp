@@ -77,13 +77,11 @@ public class AppController {
     }
 
     @PostMapping("/search")
-    public ModelAndView validateSearch(@RequestParam String keyword) {
+    ModelAndView validateSearch(@RequestParam String keyword) {
         final ModelAndView mav = new ModelAndView("search");
         mav.addObject("formationList",
                 this.formationService.find(keyword));
         return mav;
-
-
     }
 
 }
